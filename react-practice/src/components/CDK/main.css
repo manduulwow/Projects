@@ -1,0 +1,10 @@
+.cdk-box{
+    border: solid 1px;
+    height: 500px;
+    border: solid 1px;
+}
+
+.cdkmain-container{
+    display: grid;
+    grid-template-columns: auto auto;
+}

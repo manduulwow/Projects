@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<script>
+    const promise = new Promise((resolve, reject) => {
+        resolve("Promise Resolved")
+    })
+
+    promise.then((result, err) => {
+        console.log(result);
+    })
+
+    const promise2 = new Promise((resolve, reject) => {
+        reject(new Error("Whoops promise failed"))
+    })
+    
+    promise2.then((result, err) => {
+        if(err) console.log(err);
+        console.log(result);
+    });
+
+    console.log("hello");
+
+</script>

@@ -1,0 +1,10 @@
+.tl-box{
+    display: flex;
+    justify-content: center;
+}
+.tl-container{
+    width: 80%;
+}
+.list-item{
+    display: flex;
+}

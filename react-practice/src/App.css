@@ -1,0 +1,14 @@
+.item{
+  display: inline-block;
+  margin: 20px 100px;
+  cursor: pointer;
+  padding: 1em;
+  color: white;
+  background-color: #82E0AA;
+  border-radius: 10px/30px;
+}
+
+.items-container{
+  display: grid;
+  place-items: center;
+}

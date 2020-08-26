@@ -1,0 +1,17 @@
+.tb-container{
+    display: flex;
+    justify-content: space-evenly;
+    height: 500px;
+}
+
+.container .box{
+    border: solid 1px;
+    width: 32%;
+    cursor: pointer;
+}
+
+.tf-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            height: 100vh;
+        }
+
+        .container {
+            display: grid;
+            place-items: center;
+            height: 100%;
+        }
+
+        .circle {
+            transition-property: width, height;
+            transition-duration: 2s;
+            background-color: red;
+            border-radius: 50%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="go()">Click me</button>
+    <div class="container">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    const go = () => {
+        const circle = document.createElement('div');
+        circle.style.width = 0;
+        circle.style.height = 0;
+        showCircle(circle, (circle) => {
+            circle.append("Callback works!");
+        });
+    }
+
+    const showCircle = (circle, callback) => {
+        circle.classList.add('circle');
+        document.querySelector('.container').append(circle);
+
+        setTimeout(() => {
+            circle.style.width = `${200}px`;
+            circle.style.height = `${200}px`;
+            circle.addEventListener('transitionend', function handler() {
+                circle.removeEventListener('transitionend', handler);
+                callback(circle);
+            })
+        }, 0);
+    }
+</script>

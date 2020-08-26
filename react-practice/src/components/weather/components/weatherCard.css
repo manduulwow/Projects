@@ -1,0 +1,53 @@
+.weatherCard{
+    display: inline-block;
+    width: 350px;
+    height: 510px;
+    /* background-image: url('../img/2.jpg'); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.25);
+}
+
+.wc-wd{
+    text-align: center;
+    /* color: white; */
+    height: 84%;
+}
+
+.wc-wd span{
+    position: relative;
+    top: 20px;
+}
+
+.weather-mc{
+    margin: 0 10%;
+}
+
+.wc-body{
+    height: 90%;
+    width: 90%;
+    margin: auto;
+}
+
+.wi-nav{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px;
+}
+
+.nav-item-cn{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-item-c{
+    text-align: end;
+    position: relative;
+    bottom: 8px;
+}
+
+.wi-nav-item{
+    width: 60px;
+}

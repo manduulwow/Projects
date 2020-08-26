@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .container {
+            display: grid;
+            place-items: center;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <button class="button" attr="Fk" code-set="on">Cool</button>
+            <button class="button" attr="Fk2" data-hightlight-click="on">Cool</button>
+            <button class="button" attr="Fk3">Cool</button>
+            <button class="button" attr="Fk4">Cool</button>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    const buttons = document.querySelectorAll('.button');
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            console.log(button.getAttribute('code-set'));
+        })
+    })
+</script>

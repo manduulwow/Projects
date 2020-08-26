@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #container {
+            margin: 0 10%;
+            display: flex;
+            place-items: center;
+        }
+
+        .group-container {
+            border: solid 1px;
+            width: 250px
+        }
+
+        .li-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .li-to {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .space {
+            margin: 10px 5px;
+        }
+
+        .li-co:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .addDeal {
+            cursor: pointer;
+        }
+
+        .gt {
+            cursor: pointer;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="group-container">
+            <div class="gt space" onclick="hideAndShow(this)">Group4</div>
+            <div>
+                <div class="li-co">
+                   
+                </div>
+                <div class="addDeal space" onclick="addElement(this)">
+                    <span>Add deal</span>
+                </div>
+                <div class="li-to space">
+                    <div>Total: $0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    const hideAndShow = (e) => {
+        if (e.parentElement.children[1].classList.contains('hide')) {
+            e.parentElement.children[1].classList.remove('hide');
+        } else {
+            e.parentElement.children[1].classList.add('hide');
+        }
+    }
+
+    const addElement = (e) => {
+        const liRow = document.createElement('div');        
+        const name = document.createElement('div');
+        const price = document.createElement('div');
+        liRow.classList.add('li-row','space');
+        name.textContent = "Item " + (e.parentElement.children[0].children.length+1);
+        price.textContent = "$"+Math.floor((Math.random() * 100) + 1);
+        liRow.appendChild(name);
+        liRow.appendChild(price);
+        e.parentElement.children[0].appendChild(liRow);
+        calculateTotal(e.parentElement.children[0]);
+    }
+
+    const calculateTotal = (e) => {
+        console.log(Array.from(e.children));
+        const list = Array.from(e.children);
+        const total = list.map((e) => parseInt(e.children[1].textContent.replace('$',''))).reduce((a,b) => (a+b));
+        e.parentElement.children[2].children[0].textContent = "$"+total;
+    }
+</script>
