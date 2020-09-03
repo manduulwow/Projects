@@ -1,0 +1,5 @@
+.wc-box{
+    justify-content: space-evenly;
+    display: flex;
+    width: 75vw;
+}

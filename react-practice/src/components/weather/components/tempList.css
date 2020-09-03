@@ -1,0 +1,12 @@
+.wi-i{
+    display: flex;
+    justify-content: space-evenly;
+    opacity: 0;
+    transition: 1s;
+    transition-delay: 1s;
+    text-align: center;
+}
+
+.wi-i-show{
+    opacity: 1;
+}

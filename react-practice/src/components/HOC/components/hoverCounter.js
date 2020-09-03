@@ -2,9 +2,6 @@ import React from 'react';
 import UpdatedComponent from './updateComponent';
 
 class HoverCounter extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <div className="hc-container">

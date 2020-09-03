@@ -7,7 +7,7 @@ class WeatherInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showInfo: false
+            showInfo: false,
         }
         this.getTemperature = this.getTemperature.bind(this);
         this.getNavBar = this.getNavBar.bind(this);
@@ -15,10 +15,11 @@ class WeatherInfo extends React.Component {
     }
 
     getTemperature() {
+        let description = this.props.weatherList[0].weather[0].description;
         return (
             <div className="nav-item-c">
-                <div className="">hello</div>
-                <div className="">2</div>
+                <div className="">{description.charAt().toUpperCase()+description.slice(1)}</div>
+                <div className="">{(this.props.weatherList[0].main.temp-273).toFixed(0)}</div>
             </div>
         )
     }
@@ -33,6 +34,7 @@ class WeatherInfo extends React.Component {
     }
 
     showMoreInfo() {
+        this.props.show();
         this.setState({ showInfo: !this.state.showInfo });
     }
 
@@ -41,7 +43,7 @@ class WeatherInfo extends React.Component {
             <Fragment>
                 <div className="wi-nav">
                     <div className="wi-nh wi-nav-item" onClick={this.showMoreInfo}>
-                        <span>{new Date().getHours()}</span>
+                        <span>{this.props.day}</span>
                         <span style={{ position: "relative", top: 3 }}>
                             {(this.state.showInfo) ? <MdArrowDropDown /> : ""}
                         </span>
@@ -50,8 +52,8 @@ class WeatherInfo extends React.Component {
                         {(!this.state.showInfo) ? this.getTemperature() : this.getNavBar()}
                     </div>
                 </div>
-                <div className="wi-i">
-                    <TempList />
+                <div className={"wi-i "+(this.state.showInfo ? 'wi-i-show':'')}>
+                    <TempList weatherList={this.props.weatherList}/>
                 </div>
             </Fragment>
         )
